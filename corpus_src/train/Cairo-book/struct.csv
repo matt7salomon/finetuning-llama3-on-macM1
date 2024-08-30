@@ -1,0 +1,148 @@
+question,answer
+"how do I define a struct","To define a struct, we enter the keyword struct and name the entire struct. A struct’s name should describe the significance of the pieces of data being grouped together. Then, inside curly brackets, we define the names and types of the pieces of data, which we call fields. "
+"create a struct for a user account","
+```
+    #[derive(Copy, Drop)]
+    struct User {
+        active: bool,
+        username: felt252,
+        email: felt252,
+        sign_in_count: u64,
+    }
+```
+ "
+"how do I use a defined struct ?","
+```
+#[derive(Copy, Drop)]
+struct User {
+    active: bool,
+    username: felt252,
+    email: felt252,
+    sign_in_count: u64,
+}
+fn main() {
+    let user1 = User {
+        active: true, username: 'someusername123', email: 'someone@example.com', sign_in_count: 1
+    };
+}
+```
+"
+"Create a struct for representing time","
+``` 
+    #[derive(Copy, Drop)]
+    struct Time {        
+        hours: u64,
+        minutes: u64,
+        seconds: u64
+    }
+
+    fn main() {
+        let cur_time = Time {
+            hours: 6, minutes: 3, seconds: 12
+        };
+    }
+```
+"
+"How can I access a specific field of a struct ?","To get a specific value from a struct, we use dot notation. For example, to access this user’s email address, we use user1.email. If the instance is mutable, we can change a value by using the dot notation and assigning into a particular field."
+"define a struct for an email account gerard with password 1234 and then change password to 'toto'","
+```
+    #[derive(Copy, Drop)]
+    struct MailAccount {        
+        address: felt,
+        password: felt,
+    }
+
+    fn main() {
+        let mut myMail = MailAccount {
+            address: 'gerard@y.com', password: '1234'
+        };
+        myMail.password = 'toto';
+    }
+```
+"
+"
+Please simplify that code:
+
+struct User {
+    active: bool,
+    username: felt252,
+    email: felt252,
+    sign_in_count: u64,
+}
+
+fn build_user(email: felt252, username: felt252) -> User {
+    User { active: true, username: username, email: email, sign_in_count: 1, }
+}
+
+","
+Sure,
+```
+struct User {
+    active: bool,
+    username: felt252,
+    email: felt252,
+    sign_in_count: u64,
+}
+
+
+fn build_user_short(email: felt252, username: felt252) -> User {
+    User { active: true, username, email, sign_in_count: 1, }
+}
+```
+
+- Because the parameter names and the struct field names are exactly the same, we can use the field init shorthand syntax to rewrite build_user so it behaves exactly the same but doesn’t have the repetition of username and email
+"
+"create a struct for a vehicle","
+    #[derive(Copy, Clone)]
+    struct Vehicle {
+        make: felt,
+        model: felt,
+        year: u32,
+        is_electric: bool,
+    }
+"
+"how to instantiate a struct for a book ?","
+    #[derive(Copy, Clone)]
+    struct Book {
+        title: felt,
+        author: felt,
+        pages: u32,
+        is_hardcover: bool,
+    }
+
+    fn main() {
+        let book = Book {
+            title: 'The Great Gatsby',
+            author: 'F. Scott Fitzgerald',
+            pages: 180,
+            is_hardcover: true,
+        };
+    }
+"
+"Define a struct for an employee","
+    #[derive(Copy, Clone)]
+    struct Employee {
+        name: felt,
+        position: felt,
+        start_year: u32,
+        full_time: bool,
+    }
+"
+"How to initialize a struct for a smartphone?","
+    #[derive(Copy, Clone)]
+    struct Smartphone {
+        brand: felt,
+        model: felt,
+        storage_capacity: u64,
+        is_water_resistant: bool,
+    }
+
+    fn main() {
+        let phone = Smartphone {
+            brand: 'AcmePhone',
+            model: 'X200',
+            storage_capacity: 128,
+            is_water_resistant: true,
+        };
+    }
+"

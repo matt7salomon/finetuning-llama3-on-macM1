@@ -1,0 +1,243 @@
+question,answer
+"add a value of 0 to an array named myArray","
+```
+    myArray.append(0); // use 'append' to add a value to an array
+```
+"
+"Create an array and add three values to it","
+```
+    use array::ArrayTrait;
+    
+    let mut array = ArrayTrait::new(); // The array is defined as mut in order to append new values
+    array.append(0); // To append a value, use array.append(myValue)
+    array.append(1);    
+    array.append(2);
+```
+"
+"Create an array of u128","
+```
+    use array::ArrayTrait;
+
+    let mut arr = ArrayTrait::<u128>::new();
+```
+"
+"Create an array of u32","
+```
+    // When required, you can pass the expected type of items inside the array when instantiating the array like this, or explicitly define the type the variable.
+    use array::ArrayTrait;
+
+    let mut arr = ArrayTrait::<u32>::new();
+```
+"
+"Create an array of u64","
+```
+    use array::ArrayTrait;
+
+    //When required, you can pass the expected type of items inside the array when instantiating the array like this,
+    // or explicitly define the type the variable.
+    let mut arr = ArrayTrait::<u64>::new(); 
+```
+"
+"create an array, add 3 values, and remove one","
+```
+use array::ArrayTrait;
+
+fn main() {
+    let mut a = ArrayTrait::new();
+    a.append(10);
+    a.append(1);
+    a.append(2);
+
+    //  You can only remove elements from the front of an array by using the pop_front() method.
+    let first_value = a.pop_front().unwrap();
+
+    // first_value is set to the removed element, or Option::None if the array is empty.
+}
+```
+"
+"How can I get the value at a specific index of an array","
+ To access array elements, you can use get() or at() array methods that return different types. Using arr.at(index) is equivalent to using the subscripting operator arr[index].
+
+The get function returns an Option<Box<@T>>, which means it returns an option to a Box type (Cairo's smart-pointer type) containing a snapshot to the element at the specified index if that element exists in the array. If the element doesn't exist, get returns None. This method is useful when you expect to access indices that may not be within the array's bounds and want to handle such cases gracefully without panics.
+
+The at function, on the other hand, directly returns a snapshot to the element at the specified index using the unbox() operator to extract the value stored in a box. If the index is out of bounds, a panic error occurs. You should only use at when you want the program to panic if the provided index is out of the array's bounds, which can prevent unexpected behavior.
+
+In summary, use at when you want to panic on out-of-bounds access attempts, and use get when you prefer to handle such cases gracefully without panicking.
+"
+"create an arary, add 2 values, affect the first value to a variable","
+
+```use array::ArrayTrait;
+
+fn main() {
+    let mut a = ArrayTrait::new();
+    a.append(0);
+    a.append(1);
+
+    let value_at_index_zero = *a.at(0); // value_at_index_zero is set to 0
+ }
+```
+ "
+"get the size of the array 'myArray'","
+```
+    let usize size = myArray.len() 
+```
+ "
+"test if myArray is empty","
+```
+    // use the is_empty() method, which returns true if the array is empty and false otherwise
+    if(myArry.is_empty) 'it is empty'.print()
+```
+ "
+"create an array 'messages' that contains a u128, a felt252, a u32","
+```
+//If you want to store elements of different types in an array, you can use an Enum.
+ use array::ArrayTrait;
+ enum Data {
+    Integer: u128,
+    Felt: felt252,
+    Val: u32,
+}
+
+fn main() {
+    let mut messages: Array<Data> = ArrayTrait::new();
+    messages.append(Data::Integer(100));
+    messages.append(Data::Felt('hello world'));
+    messages.append(Data::Val(10));
+}
+```
+"
+"
+create an array 'messages' that contains a u64, a u16, a tuple (u32,u32)","
+```
+ //If you want to store elements of different types in an array, you can use an Enum.
+ use array::ArrayTrait;
+ #[derive(Copy, Drop)]
+ enum Data {
+    lInteger: u64,
+    sInteger: u16,
+    Tuple: (u32,u32)
+}
+
+fn main() {
+    let mut messages: Array<Data> = ArrayTrait::new();
+    messages.append(Data::lInteger(100));
+    messages.append(Data::sInteger(40));    
+    messages.append(Data::Tuple(50,50));
+}
+```
+"
+"What is a span","Span is a struct that represents a snapshot of an Array. It is designed to provide safe and controlled access to the elements of an array without modifying the original array"
+"what are spans used for ?"," Span is particularly useful for ensuring data integrity and avoiding borrowing issues when passing arrays between functions or when performing read-only operations
+
+All methods provided by Array can also be used with Span, with the exception of the append() method."
+"Create a span out of an array 'array'","
+```
+    // To create a Span of an Array, call the span() method
+    array.span()
+```
+"
+"what is wrong with this code: arr[index]","In cairo you can get the value using arr.get(index) or arr.at(index) but the syntax arr[index] does not exist in Cairo"
+"why is this code incorrect: myArray.pop()","There is no pop function in cairo, but a pop_front, use pop_front instead."
+"Can I push values to an array","No, you can append a value to an array"
+"how can I get the size of an array in Cairo","
+```
+    // length returns a usize value equal to the number of elements stored in the array
+    let length = myArray.len();
+```
+"
+"How do I know if an array is empty","
+```
+    let empty = a.is_empty(); // is_empty returns true if an array is empty
+```
+"
+"Create an array, append two values and print them","
+```
+use array::ArrayTrait;
+use debug::PrintTrait;
+fn main() {
+    let mut a = ArrayTrait::new();
+    // add two values
+    a.append(0);
+    a.append(1);
+
+    // read them, We use the at() method to get the values from the array
+    let first = *a.at(0);
+    let second = *a.at(1);
+
+    // print the values, debug::PrinTrait is used to print the values
+    first.print();
+    second.print();
+}
+```
+"
+"In the sample: let second = *m_array.at(1); is 1 the address of the second element ?","
+No, 1 is the index"
+"read the third element of my_array and affect it to 'third'","
+```
+third = my_array.at(2)
+```
+"
+"myArray is empty, what does that code do: myArray.pop_front();","
+    As the array is empty, pop_front returns Option::None
+"
+"Add three distinct values to an existing array named 'scores'","
+    scores.append(50); // Appending an integer value
+    scores.append(85); // Appending another integer value
+    scores.append(97); // Appending the third integer value
+"
+"Insert the string 'hello' into an array named 'words'","
+    words.append('hello'); // Use 'append' to add a string to an array
+"
+"Create an array of strings and add two names to it","
+    use array::ArrayTrait;
+
+    let mut names = ArrayTrait::<felt>::new();
+    names.append('Alice');
+    names.append('Bob');
+"
+"Can I do my_array.net() to get the next element of an array?","No, there is no such method, you need to use get() or at, with the correct index"
+"Please correct: 
+    let mut i=0
+    loop {
+        t = array1.next();
+        u = array2.next();
+        if(i==10)
+        {
+            return t+u;
+        }
+        i+=1;
+    }
+    ","
+```
+    // next is not a method for arrays in Cairo
+    let mut i=0
+    loop {
+        t = array1.at(i);
+        u = array2.at(i);
+        if(i==10)
+        {
+            return t+u;
+        }
+        i+=1;
+    }
+```
+"
+"How can I store elements of different types in an array?","
+If you want to store elements of different types in an array, you can use an Enum to define a custom data type that can hold multiple types. Enums will be explained in more detail in the Enums and Pattern Matching chapter.
+
+```
+#[derive(Copy, Drop)]
+enum Data {
+    Integer: u128,
+    Felt: felt252,
+    Tuple: (u32, u32),
+}
+
+fn main() {
+    let mut messages: Array<Data> = ArrayTrait::new();
+    messages.append(Data::Integer(100));
+    messages.append(Data::Felt('hello world'));
+    messages.append(Data::Tuple((10, 30)));
+}
+```
+"

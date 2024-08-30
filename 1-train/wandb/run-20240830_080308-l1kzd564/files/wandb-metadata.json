@@ -1,0 +1,65 @@
+{
+    "os": "macOS-14.6.1-arm64-arm-64bit",
+    "python": "3.10.14",
+    "heartbeatAt": "2024-08-30T15:03:09.289362",
+    "startedAt": "2024-08-30T15:03:08.425349",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--model_name=codellama/CodeLlama-7b-Instruct-hf",
+        "--new_model=StarkWizard/llama-2-7b-cairo-trained-PEFT",
+        "--max_seq_length=1024",
+        "--window=512",
+        "--lr=2e-4",
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "up_proj",
+        "down_proj",
+        "gate_proj",
+        "lm_head",
+        "--epochs=3",
+        "--wandb_project=Llama"
+    ],
+    "state": "running",
+    "program": "/Users/mattsalomon/github/cairo-llm/1-train/train.py",
+    "codePathLocal": "train.py",
+    "codePath": "1-train/train.py",
+    "git": {
+        "remote": "https://github.com/StarkWizard/cairo-llm.git",
+        "commit": "1aff80f728fd477b98f7116452f22753a8de1471"
+    },
+    "email": "matt7.salomon@gmail.com",
+    "root": "/Users/mattsalomon/github/cairo-llm",
+    "host": "MacBook-Pro.lan",
+    "username": "mattsalomon",
+    "executable": "/Users/mattsalomon/miniconda3/envs/TF_python310/bin/python",
+    "cpu_count": 10,
+    "cpu_count_logical": 10,
+    "cpu_freq": {
+        "current": 3228,
+        "min": 600,
+        "max": 3228
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3228,
+            "min": 600,
+            "max": 3228
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 460.4317207336426,
+            "used": 9.5592041015625
+        }
+    },
+    "gpuapple": {
+        "type": "Apple M1 Pro",
+        "vendor": "sppci_vendor_Apple"
+    },
+    "memory": {
+        "total": 16.0
+    }
+}

@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/mattsalomon/github/cairo-llm/1-train/train.py", line 150, in <module>
+    from peft import LoraConfig ,prepare_model_for_kbit_training, get_peft_model
+ModuleNotFoundError: No module named 'peft'

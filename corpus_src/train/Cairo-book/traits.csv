@@ -1,0 +1,347 @@
+question,answer
+"in cairo, what does this line do: use debug::PrintTrait;","
+```
+ use debug::PrintTrait
+
+fn main() {
+    'Hello, World!'.print();
+}
+```
+"
+"in cairo, what does this line do ? 'Hello, World!'.print();","
+``` 
+    'Hello, World!'.print();
+```
+"
+"
+Why does this progam makes an error ?
+
+use debug::PrintTrait;
+
+struct Rectangle {
+    width: u64,
+    height: u64,
+}
+
+fn main() {
+    let rectangle = Rectangle { width: 30, height: 10, };
+    rectangle.print();
+}","
+
+You need to implement the PrintTrait for Rectangle.
+Here is an example of how to do it:
+```
+use debug::PrintTrait;
+
+struct Rectangle {
+    width: u64,
+    height: u64,
+}
+
+fn main() {
+    let rectangle = Rectangle { width: 30, height: 10, };
+    rectangle.print();
+}
+
+impl RectanglePrintImpl of PrintTrait<Rectangle> {
+    fn print(self: Rectangle) {
+        self.width.print();
+        self.height.print();
+    }
+}
+```
+"
+"in cairo, how do you print the value of a variable?","
+fn main() {
+    let value = 42;
+    value.print();
+}
+"
+"Why does this program produce an error when trying to print a tuple in cairo?
+
+use debug::PrintTrait;
+
+fn main() {
+    let point = (10, 20);
+    point.print();
+}
+","
+You can't directly print a tuple. You need to implement PrintTrait or print each element separately.
+Here is how you can print each element:
+use debug::PrintTrait;
+
+fn main() {
+    let point = (10, 20);
+    point.0.print();  // prints the first element of the tuple
+    point.1.print();  // prints the second element of the tuple
+}
+"
+"What's the problem with printing a custom struct directly in cairo?
+use debug::PrintTrait;
+
+struct Point {
+    x: i64,
+    y: i64,
+}
+
+fn main() {
+    let my_point = Point { x: 10, y: 20 };
+    my_point.print();
+}
+","
+The PrintTrait is not implemented for the Point struct. You need to manually implement it.
+Here is an example:
+use debug::PrintTrait;
+
+struct Point {
+    x: i64,
+    y: i64,
+}
+
+impl PointPrintImpl of PrintTrait<Point> {
+    fn print(self: Point) {
+        self.x.print();
+        self.y.print();
+    }
+}
+
+fn main() {
+    let my_point = Point { x: 10, y: 20 };
+    my_point.print();
+}
+"
+"Why won't this code compile when attempting to print a custom enum variant in cairo?
+use debug::PrintTrait;
+
+enum Direction {
+    North,
+    South,
+    East,
+    West,
+}
+
+fn main() {
+    let my_direction = Direction::North;
+    my_direction.print();
+}
+","
+Enums in Cairo can't be printed without implementing the PrintTrait for each variant.
+Here is a corrected version:
+
+use debug::PrintTrait;
+
+enum Direction {
+    North,
+    South,
+    East,
+    West,
+}
+
+impl DirectionPrintImpl of PrintTrait<Direction> {
+    fn print(self: Direction) {
+        match self {
+            Direction::North => 'North'.print(),
+            Direction::South => 'South'.print(),
+            Direction::East => 'East'.print(),
+            Direction::West => 'West'.print(),
+        }
+    }
+}
+
+fn main() {
+    let my_direction = Direction::North;
+    my_direction.print();
+}
+"
+"How do you define a custom trait for geometric shapes to calculate the perimeter and area","
+trait ShapeGeometry {
+    fn boundary(self) -> u64;
+    fn area(self) -> u64;
+}
+"
+"How can you implement a trait for a Rectangle struct that allows for the creation of a new Rectangle and the calculation of its boundary and area?","
+
+impl RectangleGeometryImpl of ShapeGeometry {
+    fn new(width: u64, high: u64) -> Rectangle {
+        Rectangle { width, high }
+    }
+
+    fn boundary(self: Rectangle) -> u64 {
+        2 * (self.high + self.width)
+    }
+    fn area(self: Rectangle) -> u64 {
+        self.high * self.width
+    }
+}
+"
+"Write a  function signature for creating a new instance of a struct as per a trait's definition.","
+fn new(width: u64, high: u64) -> Rectangle;
+"
+"How do you declare a struct that has two fields, width and high, both unsigned 64-bit integers, with capabilities to be copied and properly managed at the end of its lifecycle?","
+#[derive(Copy, Drop)]
+struct Rectangle {
+    width: u64,
+    high: u64,
+}
+"
+"How would you directly invoke a method to calculate the area of a Rectangle using the implementation of a trait?","
+RectangleGeometryImpl::area(@r).print();
+"
+"Provide an example of how to implement a generic trait that can be used by different geometric shape structs to calculate their boundary and area.","
+trait ShapeGeometryTrait<T> {
+    fn boundary(self: T) -> u64;
+    fn area(self: T) -> u64;
+}
+"
+"How can you implement the same trait for different structs, such as Rectangle and Circle, to perform operations like calculating the area and boundary?","
+impl RectangleGeometryImpl of ShapeGeometryTrait<Rectangle> {
+    fn boundary(self: Rectangle) -> u64 {
+        2 * (self.height + self.width)
+    }
+    fn area(self: Rectangle) -> u64 {
+        self.height * self.width
+    }
+}
+
+impl CircleGeometryImpl of ShapeGeometryTrait<Circle> {
+    fn boundary(self: Circle) -> u64 {
+        (2 * 314 * self.radius) / 100
+    }
+    fn area(self: Circle) -> u64 {
+        (314 * self.radius * self.radius) / 100
+    }
+}
+"
+"How can you define a trait that requires implementing a constructor method for structs?","
+trait ShapeGeometry {
+    fn new(width: u64, high: u64) -> Self;
+}
+"
+"How can you implement the methods of a generic trait for a custom struct Rectangle?","
+impl RectangleGeometryImpl of ShapeGeometryTrait<Rectangle> {
+    fn boundary(self: Rectangle) -> u64 {
+        2 * (self.height + self.width)
+    }
+    fn area(self: Rectangle) -> u64 {
+        self.height * self.width
+    }
+}
+"
+"If you have a struct Rectangle, how would you define a trait ShapeGeometryTrait such that it can be generically applied to other structs as well?","
+trait ShapeGeometryTrait<T> {
+    fn boundary(self: T) -> u64;
+    fn area(self: T) -> u64;
+}
+"
+"How can I handle optional return values in Cairo smart contracts?","
+To handle optional return values in Cairo, you should use the OptionTrait like this:
+
+    use core::option::OptionTrait;
+
+    fn some_function() -> Option<u128> {
+        // ... function logic
+        if condition_is_met {
+            Some(return_value)
+        } else {
+            None
+        }
+    }
+The OptionTrait provides methods such as is_some(), is_none(), and unwrap() to work with optional values.
+"
+"What is a ResultTrait and when should I use it in Cairo?","
+ResultTrait is used to return and propagate errors in Cairo smart contracts. Here's how you can use it:
+
+    use core::result::ResultTrait;
+
+    fn another_function() -> Result<u128, SomeErrorType> {
+        // ... function logic
+        if error_condition {
+            Err(some_error)
+        } else {
+            Ok(successful_value)
+        }
+    }
+You should use ResultTrait when you need to handle the possibility of an error occurring during the execution of a function.
+"
+"How do I declare a smart contract's address in Cairo using a type-safe method?","
+To declare a smart contract's address in Cairo using a type-safe method, you can use ContractAddress type as follows:
+
+    use starknet::ContractAddress;
+
+    const SOME_CONTRACT_ADDRESS: ContractAddress = contract_address_const!(0x0123456789abcdef);
+
+This ensures that the address is of the correct type for use within the smart contract.
+"
+"What is the purpose of the ContractAddressZeroable trait?","
+ContractAddressZeroable is used to determine if a ContractAddress type value is zero or not. Here's an example of its use:
+
+    use starknet::contract_address::ContractAddressZeroable;
+    use starknet::ContractAddress;
+
+    fn is_address_zero(address: ContractAddress) -> bool {
+        address.is_zero()
+    }
+This trait is useful when you need to check if an address is set to a default or null-like value.
+"
+"How can I create a constant contract address in Cairo?","
+You can create a constant contract address in Cairo with the contract_address_const! macro like this:
+
+    use starknet::contract_address_const;
+
+    const KNOWN_CONTRACT_ADDRESS: ContractAddress = contract_address_const!(0x0123456789abcdef);
+This is useful for when you need to work with known contract addresses that will not change.
+"
+"What is the Into trait and how can I use it in Cairo?","
+The Into trait is used for converting one type into another. In Cairo, you can use it as follows:
+
+    use traits::Into;
+
+    fn convert_type<T, S: Into<T>>(value: S) -> T {
+        value.into()
+    }
+This trait simplifies type conversion in your smart contract code.
+"
+"Can you give me an example of using TryInto in a Cairo contract?","
+Certainly! Here’s how you might use TryInto:
+
+    use traits::TryInto;
+
+    fn try_convert_type<T, S: TryInto<T>>(value: S) -> Result<T, S::Error> {
+        value.try_into()
+    }
+Use TryInto when the conversion might fail and you need to handle the possibility of an error.
+"
+"What is the get_caller_address function used for in Cairo contracts?","
+The get_caller_address function is used to obtain the address of the entity that called the contract function:
+
+    use starknet::get_caller_address;
+
+    fn get_sender() -> ContractAddress {
+        get_caller_address()
+    }
+It is commonly used for authorization checks.
+"
+"How can I obtain the current contract's address within the contract code?","
+You can obtain the current contract’s address with the get_contract_address function:
+
+    use starknet::info::get_contract_address;
+
+    fn get_own_address() -> ContractAddress {
+        get_contract_address()
+    }
+This is useful for contracts that need to pass their own address as a reference or for logging purposes.
+"
+"What should I be aware of when importing multiple traits or functions into a Cairo contract module?","
+When importing multiple traits or functions, ensure there are no naming conflicts and that each import is used according to its purpose:
+
+    // Import multiple traits
+    use core::option::OptionTrait;
+    use core::result::ResultTrait;
+
+    // Import functions
+    use starknet::get_caller_address;
+    use starknet::info::get_contract_address;
+
+    // Contract code utilizing the imported traits and functions
+You should also manage the namespace effectively to keep your code clean and readable.
+"

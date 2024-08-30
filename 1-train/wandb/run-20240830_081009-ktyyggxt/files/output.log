@@ -1,0 +1,103 @@
+Traceback (most recent call last):
+  File "/Users/mattsalomon/miniconda3/envs/TF_python310/lib/python3.10/site-packages/transformers/activations_tf.py", line 22, in <module>
+    import tf_keras as keras
+ModuleNotFoundError: No module named 'tf_keras'
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "/Users/mattsalomon/miniconda3/envs/TF_python310/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1603, in _get_module
+    return importlib.import_module("." + module_name, self.__name__)
+  File "/Users/mattsalomon/miniconda3/envs/TF_python310/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/Users/mattsalomon/miniconda3/envs/TF_python310/lib/python3.10/site-packages/transformers/modeling_tf_utils.py", line 38, in <module>
+    from .activations_tf import get_tf_activation
+  File "/Users/mattsalomon/miniconda3/envs/TF_python310/lib/python3.10/site-packages/transformers/activations_tf.py", line 27, in <module>
+    raise ValueError(
+ValueError: Your currently installed version of Keras is Keras 3, but this is not yet supported in Transformers. Please install the backwards-compatible tf-keras package with `pip install tf-keras`.
+The above exception was the direct cause of the following exception:
+Traceback (most recent call last):
+  File "/Users/mattsalomon/miniconda3/envs/TF_python310/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1603, in _get_module
+    return importlib.import_module("." + module_name, self.__name__)
+  File "/Users/mattsalomon/miniconda3/envs/TF_python310/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/Users/mattsalomon/miniconda3/envs/TF_python310/lib/python3.10/site-packages/transformers/integrations/integration_utils.py", line 36, in <module>
+    from .. import PreTrainedModel, TFPreTrainedModel
+  File "<frozen importlib._bootstrap>", line 1075, in _handle_fromlist
+  File "/Users/mattsalomon/miniconda3/envs/TF_python310/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1593, in __getattr__
+    module = self._get_module(self._class_to_module[name])
+  File "/Users/mattsalomon/miniconda3/envs/TF_python310/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1605, in _get_module
+    raise RuntimeError(
+RuntimeError: Failed to import transformers.modeling_tf_utils because of the following error (look up to see its traceback):
+Your currently installed version of Keras is Keras 3, but this is not yet supported in Transformers. Please install the backwards-compatible tf-keras package with `pip install tf-keras`.
+The above exception was the direct cause of the following exception:
+Traceback (most recent call last):
+  File "/Users/mattsalomon/miniconda3/envs/TF_python310/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1603, in _get_module
+    return importlib.import_module("." + module_name, self.__name__)
+  File "/Users/mattsalomon/miniconda3/envs/TF_python310/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/Users/mattsalomon/miniconda3/envs/TF_python310/lib/python3.10/site-packages/transformers/trainer.py", line 42, in <module>
+    from .integrations import (
+  File "<frozen importlib._bootstrap>", line 1075, in _handle_fromlist
+  File "/Users/mattsalomon/miniconda3/envs/TF_python310/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1593, in __getattr__
+    module = self._get_module(self._class_to_module[name])
+  File "/Users/mattsalomon/miniconda3/envs/TF_python310/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1605, in _get_module
+    raise RuntimeError(
+RuntimeError: Failed to import transformers.integrations.integration_utils because of the following error (look up to see its traceback):
+Failed to import transformers.modeling_tf_utils because of the following error (look up to see its traceback):
+Your currently installed version of Keras is Keras 3, but this is not yet supported in Transformers. Please install the backwards-compatible tf-keras package with `pip install tf-keras`.
+The above exception was the direct cause of the following exception:
+Traceback (most recent call last):
+  File "/Users/mattsalomon/miniconda3/envs/TF_python310/lib/python3.10/site-packages/trl/import_utils.py", line 192, in _get_module
+    return importlib.import_module("." + module_name, self.__name__)
+  File "/Users/mattsalomon/miniconda3/envs/TF_python310/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/Users/mattsalomon/miniconda3/envs/TF_python310/lib/python3.10/site-packages/trl/trainer/sft_trainer.py", line 28, in <module>
+    from transformers import (
+  File "<frozen importlib._bootstrap>", line 1075, in _handle_fromlist
+  File "/Users/mattsalomon/miniconda3/envs/TF_python310/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1593, in __getattr__
+    module = self._get_module(self._class_to_module[name])
+  File "/Users/mattsalomon/miniconda3/envs/TF_python310/lib/python3.10/site-packages/transformers/utils/import_utils.py", line 1605, in _get_module
+    raise RuntimeError(
+RuntimeError: Failed to import transformers.trainer because of the following error (look up to see its traceback):
+Failed to import transformers.integrations.integration_utils because of the following error (look up to see its traceback):
+Failed to import transformers.modeling_tf_utils because of the following error (look up to see its traceback):
+Your currently installed version of Keras is Keras 3, but this is not yet supported in Transformers. Please install the backwards-compatible tf-keras package with `pip install tf-keras`.
+The above exception was the direct cause of the following exception:
+Traceback (most recent call last):
+  File "/Users/mattsalomon/github/cairo-llm/1-train/train.py", line 152, in <module>
+    from trl import SFTTrainer
+  File "<frozen importlib._bootstrap>", line 1075, in _handle_fromlist
+  File "/Users/mattsalomon/miniconda3/envs/TF_python310/lib/python3.10/site-packages/trl/import_utils.py", line 183, in __getattr__
+    value = getattr(module, name)
+  File "/Users/mattsalomon/miniconda3/envs/TF_python310/lib/python3.10/site-packages/trl/import_utils.py", line 182, in __getattr__
+    module = self._get_module(self._class_to_module[name])
+  File "/Users/mattsalomon/miniconda3/envs/TF_python310/lib/python3.10/site-packages/trl/import_utils.py", line 194, in _get_module
+    raise RuntimeError(
+RuntimeError: Failed to import trl.trainer.sft_trainer because of the following error (look up to see its traceback):
+Failed to import transformers.trainer because of the following error (look up to see its traceback):
+Failed to import transformers.integrations.integration_utils because of the following error (look up to see its traceback):
+Failed to import transformers.modeling_tf_utils because of the following error (look up to see its traceback):
+Your currently installed version of Keras is Keras 3, but this is not yet supported in Transformers. Please install the backwards-compatible tf-keras package with `pip install tf-keras`.

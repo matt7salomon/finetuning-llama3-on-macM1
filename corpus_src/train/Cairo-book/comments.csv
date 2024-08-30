@@ -1,0 +1,12 @@
+question,answer
+"how do I create a comment ?","
+```
+    // This is a comment
+```
+"
+"how are commentaries declared ?","
+Use the '//' decoration to add a comment to your code.
+```
+    // This is a comment
+```
+"

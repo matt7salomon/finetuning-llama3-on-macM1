@@ -1,0 +1,115 @@
+question,answer
+"Is there an address type in Cairo","
+There is no built-in type for addresses, you need to use the starknet type ContractAddress:
+```
+    use starknet::ContractAddress; // we declare using the Starknet::ContractAddress
+
+    let mut owner: ContractAddress;
+```
+"
+"How do I specify a contract address in Cairo?","
+In Cairo, you don't have a specific address type like. You should use ContractAddress from the starknet types:
+    use starknet::ContractAddress;
+"
+"What is the equivalent of Ethereum's address type in Cairo for smart contracts?","
+Cairo handles addresses differently from Ethereum's Solidity. Use ContractAddress for denoting addresses:
+    use starknet::ContractAddress;
+"
+"In Cairo, how do you handle contract addresses, considering there's no native 'address' type?","
+Since Cairo doesn't have a native 'address' type, you handle contract addresses by using ContractAddress from the starknet module:
+```
+use starknet::ContractAddress;
+```
+"
+"What type should be used to store smart contract addresses in Cairo?","
+Smart contract addresses in Cairo should be stored using the ContractAddress type provided by the starknet module:
+```
+use starknet::ContractAddress;
+```
+"
+"If I need to declare a contract address in my Cairo smart contract, what type will I use?","In your Cairo smart contract, you would declare a contract address using the ContractAddress type:
+```
+use starknet::ContractAddress;
+```
+"
+"What import is necessary in Cairo to work with contract addresses in the context of StarkNet?","
+You need to import ContractAddress from the starknet module to work with contract addresses in Cairo:
+```
+use starknet::ContractAddress;
+```
+"
+"Can you show how to declare a mutable variable to store a StarkNet contract address in Cairo?","
+Certainly! Here's how you declare a mutable variable for a StarkNet contract address in Cairo:
+```
+use starknet::ContractAddress;
+
+let mut contract_address: ContractAddress;
+```
+"
+"How do you initialize a variable for storing contract addresses in Cairo programming for StarkNet applications?","
+```
+use starknet::ContractAddress;
+
+let contract_address: ContractAddress = /* assign value here */;
+```
+"
+"What type is used for addresses in Cairo?","
+In Cairo, addresses are represented using the ContractAddress type from the starknet module:
+```
+use starknet::ContractAddress; // Import ContractAddress from the starknet module
+
+let owner: ContractAddress; // Declare a variable of type ContractAddress
+```
+"
+"How is a contract address defined in Cairo?","
+Contract addresses in Cairo are defined using the ContractAddress type from the starknet module:
+```
+use starknet::ContractAddress; // Importing ContractAddress from starknet
+```
+"
+"What is Cairo's version of Ethereum's address type for smart contracts?","
+In Cairo, the equivalent to Ethereum's address type for smart contracts is ContractAddress, found in the starknet module:
+```
+use starknet::ContractAddress; // Use ContractAddress from starknet
+```
+"
+"What is the method for managing contract addresses in Cairo without a native 'address' type?","
+To manage contract addresses in Cairo, where there is no native 'address' type, utilize ContractAddress from the starknet module:
+```
+use starknet::ContractAddress; // Incorporating ContractAddress from starknet
+```
+"
+"How are smart contract addresses represented in Cairo?","
+Smart contract addresses in Cairo are represented using the ContractAddress type from the starknet module:
+```
+use starknet::ContractAddress; // Employ ContractAddress from starknet
+```
+"
+"What type should I use for contract addresses in Cairo smart contracts?","
+For contract addresses in Cairo smart contracts, you should use the ContractAddress type:
+```
+use starknet::ContractAddress; // Utilizing ContractAddress from starknet
+```
+"
+"What import is necessary in Cairo for handling StarkNet contract addresses?","
+To handle StarkNet contract addresses in Cairo, import the ContractAddress type from the starknet module:
+```
+use starknet::ContractAddress; // Importing ContractAddress for StarkNet
+```
+"
+"How is a mutable StarkNet contract address variable declared in Cairo?","
+To declare a mutable StarkNet contract address variable in Cairo, use the following syntax:
+```
+use starknet::ContractAddress; // Import ContractAddress
+
+let mut contract_address: ContractAddress; // Declare a mutable variable of ContractAddress
+```
+"
+"How to initialize a Cairo variable for StarkNet contract addresses?","
+To initialize a variable for StarkNet contract addresses in Cairo:
+```
+use starknet::ContractAddress; // Import ContractAddress
+
+let contract_address: ContractAddress = /* value assignment */; // Initialize a ContractAddress variable
+```
+"

@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/mattsalomon/github/cairo-llm/1-train/train.py", line 152, in <module>
+    from trl import SFTTrainer
+ModuleNotFoundError: No module named 'trl'
