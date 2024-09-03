@@ -1,36 +1,83 @@
-# StarkWizard 🪄
+# Mistral.ai LLaMA2/LLaMA3 Fine-Tuning Script
 
-![StarkWizard Logo](doc/starkwizard_256.png)
-
-**StarkWizard** is a state-of-the-art Language Model (LLM) tailored for the Cairo smart contract language of StarkNet. With our meticulously designed training process and dedicated integration with StarkNet's intricacies, we aim to provide a robust and reliable LLM for all your Cairo smart contract needs.
-
-## Table of Contents
-
-- [StarkWizard 🪄](#starkwizard-)
-  - [Table of Contents](#table-of-contents)
-  - [Features](#features)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [](#)
-  - [Directory Structure](#directory-structure)
-  - [Contribution Guidelines](#contribution-guidelines)
-  - [Support \& Feedback](#support--feedback)
-  - [License](#license)
+This repository contains a Python script (`train.py`) designed to fine-tune a Mistral.ai LLaMA2 or LLaMA3 model. The script is configured to leverage GPU acceleration, handle environment variables, and provide a streamlined process for customizing and running the fine-tuning process.
 
 ## Features
 
-- **Cairo LLM Integration**: Crafted specifically for Cairo's smart contract language.
-- **Training script**: A cross-platform script to train the model on Windows/Linux/MacOS.
-- **Merge Capabilities**: Seamlessly merge the training weights of PEFT with the original model(s).
-- **Quantization**: AWQ (PC only) and GGUF notebooks to generate quantized versions of the merged models.
+- **Environment Management**: Uses environment variables for secure management of sensitive information like API tokens.
+- **GPU Utilization**: Automatically detects and utilizes available GPUs for faster training.
+- **Customization**: Easily configurable through command-line arguments for different fine-tuning setups.
+- **Warning Suppression**: Ignores common warnings to keep the console output clean and focused.
 
+## Requirements
 
+Ensure you have the following dependencies installed:
 
-## If you just want to use the model for inference
+- Python 3.8 or later
+- PyTorch
+- Hugging Face Transformers
+- rich
+- dotenv
+- wizardlib
 
-please visit:
+You can install the required packages using:
 
-[StarkWizard On Hugging Face](https://huggingface.co/StarkWizard) See [LM Studio](https://https://lmstudio.ai/) for a UI to chat with the model
+```bash
+pip install torch transformers rich python-dotenv
+```
+
+## Setup
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/yourusername/mistral-llama-finetuning.git
+   cd mistral-llama-finetuning
+   ```
+
+2. **Set Up Environment Variables**:
+   Create a `.env` file in the root directory of the repository and add your Hugging Face token:
+
+   ```env
+   hf_token=your_huggingface_token
+   ```
+
+3. **Check GPU Availability**:
+   Ensure that your system has a compatible NVIDIA GPU or an Apple Silicon Mac, as GPU acceleration is essential for efficient fine-tuning.
+
+## Usage
+
+### Basic Command
+
+To run the fine-tuning process, use the following command:
+
+```bash
+python train.py --model llama2 --data_path /path/to/data --output_dir /path/to/output
+```
+
+### Command-Line Arguments
+
+- `--model`: Specify the model to fine-tune (`llama2` or `llama3`).
+- `--data_path`: Path to the training data.
+- `--output_dir`: Directory where the fine-tuned model and logs will be saved.
+- `--batch_size`: (Optional) Specify the batch size for training.
+- `--epochs`: (Optional) Number of epochs to train.
+
+Example:
+
+```bash
+python train.py --model llama3 --data_path ./data --output_dir ./output --batch_size 16 --epochs 5
+```
+
+## Fine-Tuning Process
+
+The script performs the following steps:
+
+1. **Environment Setup**: Loads environment variables and configures the environment for training.
+2. **GPU Check**: Verifies GPU availability before proceeding.
+3. **Model Loading**: Loads the pre-trained LLaMA2 or LLaMA3 model from Hugging Face.
+4. **Training**: Fine-tunes the model using the specified dataset and parameters.
+5. **Saving**: Stores the fine-tuned model in the specified output directory.
+
 
 ## Installation
 
@@ -48,11 +95,6 @@ pip install -r requirements-Mac.txt
 
 Apple Silicon requires to install the nightly build of pyTorch, to get support of MPS
 
-Activate the venv
-
-```bash
-conda activate cairo-llm
-```
 
 ## Usage
 
@@ -108,44 +150,20 @@ The merged model is uploaded after merging. You need to get authorization to pus
 
 Two notebooks are proposed to generate AWQ and GGUF quantitization. Please note that AWQ is not supported on Apple Silicon.
 
----
 
-**NEW**
-The directory 0-build datasets contains a Gemini Data synthetizer. You need to have an aenvironment variabble called GEMINI_KEY, containing a configured access to gcloud Generative AI.
+## Troubleshooting
 
+- **GPU Not Detected**: Ensure that your NVIDIA drivers and CUDA toolkit are properly installed. For Mac users, ensure you're using an Apple Silicon Mac with the appropriate PyTorch build.
+- **Environment Variable Issues**: Double-check the `.env` file and ensure that `hf_token` is correctly set.
 
-## 
+## Contributing
 
-## Directory Structure
-
-```
-StarkWizard/
-│
-├── 0-build datasets/ # Contains a notebook to merge csv and upload the resulting dataset
-│
-├── 1-train/ # the train.py command
-│
-├── 2-merge/ # The merge.py command
-│
-├── doc/ # md files for merge and train
-│
-├── backup/ # POC of this project, outdated and useless
-│
-├── wizarlib/ # A lib used for convenient functions shared accross scripts
-```
-
-## Contribution Guidelines
-
-StarkWizard is an open-source project, and we welcome contributions of all kinds: new models, bug fixes, improvements to the documentation, and more. See our [contributing guide](doc/contribution_guide.md) for more details on how to get started.
-
-## Support & Feedback
-
-For support, questions, or feedback, please open an issue or mail wizard@starkwizard.com.
+Contributions are welcome! If you have improvements or suggestions, please create an issue or submit a pull request.
 
 ## License
 
-StarkWizard is open-sourced under the [MIT License](LICENSE). See the LICENSE file for more details.
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
 ---
 
-[![built with Codeium](https://codeium.com/badges/main)](https://codeium.com)
+This `README.md` file provides a comprehensive overview of the project, including setup instructions, usage guidelines, and troubleshooting tips. Let me know if you need any further customization or additional details!
