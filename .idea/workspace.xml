@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="277dfca7-79f9-499a-9c87-26b10d826e37" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/1-train/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/1-train/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/debug-internal.log" beforeDir="false" afterPath="$PROJECT_DIR$/1-train/wandb/debug-internal.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/1-train/wandb/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/latest-run/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/latest-run/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/latest-run/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/latest-run/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/latest-run/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/latest-run/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/latest-run/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/latest-run/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/latest-run/run-ktyyggxt.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080115-yjxwkpfh/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080115-yjxwkpfh/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080115-yjxwkpfh/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080115-yjxwkpfh/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080115-yjxwkpfh/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080115-yjxwkpfh/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080115-yjxwkpfh/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080115-yjxwkpfh/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080115-yjxwkpfh/run-yjxwkpfh.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080156-l6755oo0/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080156-l6755oo0/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080156-l6755oo0/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080156-l6755oo0/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080156-l6755oo0/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080156-l6755oo0/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080156-l6755oo0/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080156-l6755oo0/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080156-l6755oo0/run-l6755oo0.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080244-98qhi2m2/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080244-98qhi2m2/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080244-98qhi2m2/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080244-98qhi2m2/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080244-98qhi2m2/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080244-98qhi2m2/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080244-98qhi2m2/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080244-98qhi2m2/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080244-98qhi2m2/run-98qhi2m2.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080308-l1kzd564/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080308-l1kzd564/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080308-l1kzd564/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080308-l1kzd564/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080308-l1kzd564/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080308-l1kzd564/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080308-l1kzd564/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080308-l1kzd564/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_080308-l1kzd564/run-l1kzd564.wandb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_081009-ktyyggxt/files/conda-environment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_081009-ktyyggxt/files/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_081009-ktyyggxt/files/output.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_081009-ktyyggxt/files/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_081009-ktyyggxt/files/wandb-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_081009-ktyyggxt/files/wandb-summary.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_081009-ktyyggxt/logs/debug-internal.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_081009-ktyyggxt/logs/debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1-train/wandb/run-20240830_081009-ktyyggxt/run-ktyyggxt.wandb" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2lnHbWidUovhG8E89AaKhrL5fzj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="277dfca7-79f9-499a-9c87-26b10d826e37" name="Default Changelist" comment="" />
+      <created>1725808993510</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1725808993510</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="562" y="377" key="com.intellij.ide.util.TipDialog" timestamp="1725810004994">
+      <screen x="0" y="38" width="1728" height="1020" />
+    </state>
+    <state x="562" y="377" key="com.intellij.ide.util.TipDialog/0.38.1728.1020@0.38.1728.1020" timestamp="1725810004994" />
+  </component>
+</project>
